@@ -1,0 +1,24 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "opener:default",
+    "store:default",
+    "store:allow-get",
+    "store:allow-set",
+    "store:allow-save",
+    "store:allow-load",
+    "store:allow-reset",
+    "store:allow-entries",
+    "dialog:default",
+    "core:window:default",
+    "core:window:allow-start-dragging",
+    "dialog:allow-open",
+    "dialog:allow-confirm",
+    "dialog:allow-message"
+  ],
+  "platforms": ["macOS"]
+}

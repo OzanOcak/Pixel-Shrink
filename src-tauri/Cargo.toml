@@ -1,0 +1,45 @@
+[package]
+name = "imagine"
+version = "0.1.0"
+description = "Image compression and conversion tool"
+authors = ["ozanocak"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "imagine_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0.5", features = [] }
+
+[dependencies]
+# Tauri
+tauri = { version = "2.0.5", features = [] }
+tauri-plugin-opener = "2"
+tauri-plugin-store = "2"
+tauri-plugin-dialog = "2"
+
+# Core
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0.12"
+log = "0.4"
+tokio = { version = "1.44", features = ["rt", "macros"] }
+
+# Image Processing
+image = "0.24.9"
+oxipng = "9"
+imagequant = "4.0" 
+webp = "0.2"
+walkdir = "2"
+
+[dev-dependencies]
+tokio = { version = "1.44", features = ["full"] }
+serde_json = "1.0"
+serde = { version = "1.0.219", features = ["derive"] }
+tauri = { version = "2", features = [] }
